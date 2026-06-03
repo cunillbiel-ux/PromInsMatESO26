@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduació 2026</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #111;
+            color: #eee;
+            padding-top: 15vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-msg {
+            font-size: 18px;
+            color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #4CAF50;
+        }
+
+        h1 {
+            font-weight: 300;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        #countdown {
+            font-size: 50px;
+            font-weight: bold;
+            color: #fff;
+            transition: all 0.3s ease;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .large {
+            font-size: 100px !important;
+        }
+
+        .yellow {
+            color: #FFD700 !important;
+        }
+
+        .red-blink {
+            color: #FF3333 !important;
+            animation: blink 1s linear infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="success-msg">✅ Has entrat a l'enllaç correctament</div>
+    <h1>Espera a que comenci la reproducció</h1>
+    <div id="countdown">Carregant...</div>
+
+    <script>
+        // CONFIGURACIÓ: Any, Mes (0=Gen, 5=Juny), Dia, Hora, Minuts, Segons
+        // Ara està a les 21:30 perquè el puguis provar i veure el compte enrere.
+        const targetDate = new Date(2026, 5, 3, 22, 54, 0).getTime();
+
+        // Creem la variable de l'interval a dalt de tot per evitar el problema de càrrega
+        let timerInterval;
+
+        function actualitzarRellotge() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            const countdownEl = document.getElementById("countdown");
+
+            if (distance >= 0) {
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const totalSeconds = Math.floor(distance / 1000);
+
+                const displaySeconds = seconds < 10 ? "0" + seconds : seconds;
+
+                countdownEl.innerHTML = minutes + "m " + displaySeconds + "s ";
+                countdownEl.className = "";
+
+                // Lògica de canvi de colors i estils
+                if (totalSeconds <= 10) {
+                    countdownEl.classList.add("large", "red-blink");
+                } else if (totalSeconds <= 30) {
+                    countdownEl.classList.add("large", "yellow");
+                } else if (totalSeconds < 60) {
+                    countdownEl.classList.add("large");
+                }
+            } else {
+                // Aturem el bucle de manera segura
+                if (timerInterval) clearInterval(timerInterval);
+                countdownEl.innerHTML = "Redirigint...";
+                window.location.href = "https://player.cloudinary.com/embed/?cloud_name=dnc3jm7wk&public_id=Vi%CC%81deo_Graduacio%CC%81_1_cccau6";
+            }
+        }
+
+        // Execució immediata i programació del bucle cada segon
+        actualitzarRellotge();
+        timerInterval = setInterval(actualitzarRellotge, 1000);
+    </script>
+</body>
+
+</html>
