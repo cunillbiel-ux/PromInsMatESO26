@@ -2,19 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>¡Bienvenidos a la Graduación!</title>
+    <title>Heu entrat a la reproducció correcctament</title>
     <style>
         body { text-align: center; font-family: Arial, sans-serif; background: #f0f0f0; padding-top: 20%; }
         #countdown { font-size: 48px; font-weight: bold; color: #333; }
     </style>
 </head>
 <body>
-    <h1>El vídeo de la graduación comenzará en:</h1>
+    <h1>El vídeo es reproduïrà en...</h1>
     <div id="countdown">Cargando...</div>
 
     <script>
         // Configura aquí la fecha y hora exacta (Año, Mes [0-11], Día, Hora, Minuto, Segundo)
-        const targetDate = new Date(2026, 5, 20, 19, 0, 0).getTime(); 
+        const targetDate = new Date(2026, 5, 3, 20, 50, 0).getTime(); 
 
         const interval = setInterval(function() {
             const now = new Date().getTime();
@@ -28,7 +28,7 @@
             if (distance < 0) {
                 clearInterval(interval);
                 // Aquí pones el enlace de tu vídeo
-                window.location.href = "https://www.youtube.com/watch?v=TU_ENLACE"; 
+                window.location.href = "https://vimeo.com/1198156753?share=copy&fl=sv&fe=ci"; 
             }
         }, 1000);
     </script>
