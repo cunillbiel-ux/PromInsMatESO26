@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Has entrat a l'enllaç correctament!</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background: #f0f0f0; padding-top: 20%; }
+        #countdown { font-size: 48px; font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Espera que començi la reproducció...</h1>
+    <div id="countdown">Carregant...</div>
+
+    <script>
+        // Configura aquí la fecha y hora exacta (Año, Mes [0-11], Día, Hora, Minuto, Segundo)
+        const targetDate = new Date(2026, 5, 3, 30, 55, 0).getTime(); 
+
+        const interval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(interval);
+                // Aquí pones el enlace de tu vídeo
+                window.location.href = "https://vimeo.com/1198156753?share=copy&fl=sv&fe=ci"; 
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
