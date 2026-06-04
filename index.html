@@ -1,1 +1,100 @@
-<img src="https://res.cloudinary.com/dnc3jm7wk/image/upload/v1780574911/kjns_vu2zgx.png" />
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Encara no és la hora.</title>
+    <style>
+        /* Fons negre absolut i estructura de pantalla completa */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Contenidor principal per agrupar els elements */
+        .standby-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 600px;
+            gap: 35px;
+            /* Espaiat ideal per a mòbils */
+        }
+
+        /* Imatge adaptativa amb animació suau */
+        .standby-image {
+            width: 80%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        /* Textos moderns i adaptables a la mida de la pantalla */
+        h1 {
+            font-weight: 300;
+            font-size: clamp(20px, 5vw, 26px);
+            margin: 0;
+            color: #000000;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: clamp(14px, 3.5vw, 16px);
+            color: #000000;
+            margin: 8px 0 0 0;
+        }
+
+        /* Animació de l'escut/imatge perquè no sembli congelat */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(1.03);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="standby-container">
+        <img src="https://res.cloudinary.com/dnc3jm7wk/image/upload/v1780574911/kjns_vu2zgx.png"
+            alt="Preparant Graduació" class="standby-image">
+
+        <div>
+            <h1>Benvingut a La Graduació d'ESO 2026</h1>
+            <p>Torna a aquest enllaç quan se t'indiqui.</p>
+        </div>
+
+        <div class="loader"></div>
+    </div>
+
+</body>
+
+</html>
