@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Encara no és la hora.</title>
+    <title>Encara no es la hora.</title>
     <style>
         /* Fons negre absolut i estructura de pantalla completa */
         body,
@@ -13,9 +13,9 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            background: #ffffff;
+            background: #fff;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #000;
+            color: #eee;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -32,8 +32,7 @@
             justify-content: center;
             width: 90%;
             max-width: 600px;
-            gap: 35px;
-            /* Espaiat ideal per a mòbils */
+            gap: 30px;
         }
 
         /* Imatge adaptativa amb animació suau */
@@ -50,14 +49,14 @@
             font-weight: 300;
             font-size: clamp(20px, 5vw, 26px);
             margin: 0;
-            color: #000000;
+            color: #000;
             letter-spacing: 0.5px;
         }
 
         p {
             font-weight: 400;
             font-size: clamp(14px, 3.5vw, 16px);
-            color: #000000;
+            color: #000;
             margin: 8px 0 0 0;
         }
 
@@ -78,6 +77,27 @@
                 opacity: 0.9;
             }
         }
+
+        /* Spinner/Roda de càrrega minimalista */
+
+        /* Nou botó d'exemple */
+        .example-btn {
+            margin-top: 10px;
+            background-color: transparent;
+            color: #000;
+            padding: 10px 24px;
+            text-decoration: none;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .example-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: #000;
+        }
     </style>
 </head>
 
@@ -88,11 +108,15 @@
             alt="Preparant Graduació" class="standby-image">
 
         <div>
-            <h1>Benvingut a La Graduació d'ESO 2026</h1>
+            <h1>Benvingut/da a La Graduació</h1>
             <p>Torna a aquest enllaç quan se t'indiqui.</p>
         </div>
 
         <div class="loader"></div>
+
+        <a href="https://open.spotify.com/playlist/0tXOOz0iRe3cQrvSk1km87?si=fDod1QkkT8inkNYRDjfs_g&pt=253b1824acb0aeda3ddcec7060bd7cf2"
+            target="_blank" class="example-btn">Playlist Oficial d'Spotify</a>
+        <p>Entra a la Playlist Oficial i posa la teva cançó preferida.</p>
     </div>
 
 </body>
